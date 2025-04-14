@@ -1,6 +1,117 @@
 # IBM AI Enterprise Workflow Capstone
 Files for the IBM AI Enterprise Workflow Capstone project. 
 
+# Evaluation Questions
+
+### Are there unit tests for the API?
+
+**Yes**. 
+
+```
+tests/test_api.py
+```
+
+### Are there unit tests for the model?
+
+**Yes**. 
+
+```
+tests/test_model.py
+```
+### Are there unit tests for the logging?
+
+**Yes**.
+
+```
+tests/test_logging.py
+```
+
+### Can all of the unit tests be run with a single script and do all of the unit tests pass?
+
+**Yes**. 
+
+```
+python tests/run.py
+```
+
+![](images/Pasted%20image%2020250415001601.png)
+
+### Is there a mechanism to monitor performance?
+
+**Yes**. 
+
+```sh
+curl http://localhost:5000/metrics
+```
+
+### Was there an attempt to isolate the read/write unit tests from production models and logs?
+
+**Yes**. 
+
+- All tests are located in the `tests` folder.
+- During test execution, logs are written to a temporary log file.
+
+### Does the API work as expected? For example, can you get predictions for a specific country as well as for all countries combined?
+
+**Yes**.
+
+Train model:
+
+![](images/Pasted%20image%2020250415002156.png)
+
+Predict for 'France':
+
+![](images/Pasted%20image%2020250415002329.png)
+
+Predict for all countries:
+
+![](images/Pasted%20image%2020250415002450.png)
+### Does the data ingestion exists as a function or script to facilitate automation?
+
+**Yes**. `process` function in 
+```
+app/ingest_data.py
+```
+
+### Were multiple models compared?
+
+**Yes**. See  **Choosing a model** in `Model_building_and_selection.ipynb`
+
+### Did the EDA investigation use visualizations?
+
+**Yes**.  See **Exploratory Data Analysis** in  `Data_Investigation.ipynb`:
+
+
+![](images/Pasted%20image%2020250415002906.png)
+
+![](images/Pasted%20image%2020250415002914.png)
+
+![](images/Pasted%20image%2020250415002932.png)
+
+
+
+### Is everything containerized within a working Docker image?
+
+**Yes**. Check out the following files:
+
+```
+dockerfile
+docker-build.cmd
+docker-run.cmd
+```
+
+
+### Did they use a visualization to compare their model to the baseline model?
+
+**Yes**.  See **Evaluation** in `Model_building_and_selection.ipynb`:
+
+
+![](images/Pasted%20image%2020250415003119.png)
+![](images/Pasted%20image%2020250415003128.png)
+
+
+
+
 ## Part 1
 
 ### Case study part 1
